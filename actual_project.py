@@ -26,10 +26,12 @@ name=title.text.split('\xa0')[0]
 year=title.text.split('\xa0')[1]
 plot=soup.find('div',attrs={'class':"summary_text"})
 actual_plot=' '.join(plot.text.split())
-print(name)
-print(year)
-print(actual_plot)
+attvalue=title+" Poster"
+imgtag=soup.find('img',attrs={'title':attvalue})
+imgurl=imgtag.get('src')
+print(imgurl)
 st.write(url)
 st.write(name)
 st.write(year[1:-2])
 st.write(actual_plot)
+st.markdown("![couldn't load image](imgurl)")
