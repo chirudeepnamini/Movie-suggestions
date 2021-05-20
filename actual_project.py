@@ -25,7 +25,7 @@ actual_plot=actcont["Plot"]
 year=actcont["Year"]
 name=actcont["Title"]
 imgurl=actcont["Poster"]
-imdb_url="https://www.imdb.com/title"+tconst
+imdb_url="https://www.imdb.com/title/"+tconst
 st.write(imdb_url)
 st.write(name)
 st.write(year)
