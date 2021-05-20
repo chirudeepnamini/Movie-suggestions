@@ -15,23 +15,19 @@ wb=openpyxl.load_workbook(file_name)
 sheet=wb['Sheet']
 col=sheet['A']
 tconst=col[secrets.randbelow(sheet.max_row)].value
+key="9e579f61"
 from bs4 import BeautifulSoup
-import requests
-url="https://www.imdb.com/title/"+tconst
-print(url)
+import requests,json
+url="http://www.omdbapi.com/?i={}&apikey={}".format(tconst,key)
 r=requests.get(url)
-soup = BeautifulSoup(r.content, 'html.parser')
-title=soup.find('h1',attrs={'class':""})
-name=title.text.split('\xa0')[0]
-year=title.text.split('\xa0')[1]
-plot=soup.find('div',attrs={'class':"summary_text"})
-actual_plot=' '.join(plot.text.split())
-attvalue=name+" Poster"
-imgtag=soup.find('img',attrs={'title':attvalue})
-imgurl=imgtag.get('src')
+actcont=json.loads(r.content)
+actual_plot=actcont["Plot"]
+year=actcont["Year"]
+name=actcont["Title"]
+imgurl=actcont["Poster"]
 print(imgurl)
 st.write(url)
 st.write(name)
-st.write(year[1:-2])
+st.write(year)
 st.write(actual_plot)
 st.image(imgurl,width=300)
