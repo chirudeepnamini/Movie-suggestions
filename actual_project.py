@@ -26,8 +26,9 @@ year=actcont["Year"]
 name=actcont["Title"]
 imgurl=actcont["Poster"]
 imdb_url="https://www.imdb.com/title/"+tconst
-st.write(imdb_url)
 st.write(name)
 st.write(year)
 st.write(actual_plot)
+st.markdown(imdb_url,unsafe_allow_html=True)
 st.image(imgurl,width=300)
+
