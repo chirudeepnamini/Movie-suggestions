@@ -1,7 +1,5 @@
 import openpyxl,secrets
 import streamlit as st
-link = '[GitHub](http://github.com)'
-st.markdown(link, unsafe_allow_html=True)
 def suggestion(tolerance):
 	if tolerance==5:
 		file_name='g5.xlsx'
@@ -39,7 +37,7 @@ imdb_url="https://www.imdb.com/title/"+tconst
 st.write(name)
 st.write(year)
 st.write(actual_plot)
-imdb_url='[Go to IMDB]'+imdb_url
+imdb_url='[Go to IMDB]'+'('+imdb_url+')'
 st.markdown(imdb_url,unsafe_allow_html=True)
 st.image(imgurl,width=300)
 
