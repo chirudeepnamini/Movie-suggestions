@@ -12,7 +12,7 @@ if tolerance==8:
 if tolerance==9:
 	file_name='g9.xlsx'
 wb=openpyxl.load_workbook(file_name)
-sheet=wb['Sheet']
+sheet=wb['Sheet1']
 col=sheet['A']
 tconst=col[secrets.randbelow(sheet.max_row)].value
 key="9e579f61"
