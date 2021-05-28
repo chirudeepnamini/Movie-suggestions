@@ -1,5 +1,7 @@
 import openpyxl,secrets
 import streamlit as st
+link = '[GitHub](http://github.com)'
+st.markdown(link, unsafe_allow_html=True)
 def suggestion(tolerance):
 	if tolerance==5:
 		file_name='g5.xlsx'
