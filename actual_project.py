@@ -39,5 +39,12 @@ st.write(year)
 st.write(actual_plot)
 imdb_url='[Go to IMDB]'+'('+imdb_url+')'
 st.markdown(imdb_url,unsafe_allow_html=True)
+processed_name=name.split(' ')
+processed_name='+'.join(processed_name)+'+'+year
+google_url=google_url='https://www.google.com/search?q='+processed_name
+google_url='[Go to google]'+'('+google_url+')'
+st.markdown(google_url,unsafe_allow_html=True)
+justwatch_url='https://www.justwatch.com/in/search?q='+processed_name
+justwatch_url='[Search in justwatch]'+'('+justwatch_url+')'
+st.markdown(justwatch_url,unsafe_allow_html=True)
 st.image(imgurl,width=300)
-
