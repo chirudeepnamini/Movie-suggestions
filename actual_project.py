@@ -27,6 +27,7 @@ while(1):
 	actcont=json.loads(r.content)
 	if "Episode" in actcont:
 		tconst=suggestion(tolerance)
+		print(tconst)
 	else:
 		break
 actual_plot=actcont["Plot"]
