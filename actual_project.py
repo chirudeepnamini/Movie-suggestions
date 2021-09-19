@@ -26,6 +26,7 @@ while(1):
 	r=requests.get(url)
 	actcont=json.loads(r.content)
 	if "Episode" in actcont:
+		st.write("episode")
 		tconst=suggestion(tolerance)
 		print(tconst)
 	else:
